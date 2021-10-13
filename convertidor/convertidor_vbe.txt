@@ -1,0 +1,359 @@
+' Convertir excel a txt del reporte B-1621 Portafolio Global de Juicios
+' 20Abr20
+' Version: 1.0
+
+Dim iMatriz(57,37)
+Dim iArray(10)
+
+' Leer argumentos
+  Set objArgs = WScript.Arguments
+    For I = 0 to objArgs.Count - 1
+        'WScript.Echo objArgs(0)
+        sArchivo=Trim(objArgs(0))
+    Next
+
+' Leer Excel (input)
+  Set objExcel = CreateObject("Excel.Application")
+  Set objWorkbook = objExcel.Workbooks.Open(sArchivo)
+
+' Crear archivo plano (output)
+  sRuta = CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName)
+  filePath = sRuta & "\B-1621.txt"
+  Set objFSO = CreateObject("Scripting.FileSystemObject")
+  Set objTxt = objFSO.CreateTextFile(filePath)
+  objTxt.Close
+
+            iMatriz(8,7)="940000000000;1621;0001;0001;0001;0001;" & objExcel.Cells(8,7).Value
+            iMatriz(8,8)="940000000000;1621;0001;0001;0001;0002;" & objExcel.Cells(8,8).Value
+            iMatriz(8,9)="940000000000;1621;0001;0001;0001;0003;" & objExcel.Cells(8,9).Value
+            iMatriz(8,10)="940000000000;1621;0001;0001;0002;0001;" & objExcel.Cells(8,10).Value
+            iMatriz(8,11)="940000000000;1621;0001;0001;0002;0002;" & objExcel.Cells(8,11).Value
+            iMatriz(8,12)="940000000000;1621;0001;0001;0002;0003;" & objExcel.Cells(8,12).Value
+            iMatriz(8,13)="940000000000;1621;0001;0002;0003;0004;" & objExcel.Cells(8,13).Value
+            iMatriz(8,14)="940000000000;1621;0001;0002;0003;0005;" & objExcel.Cells(8,14).Value
+            iMatriz(8,15)="940000000000;1621;0001;0002;0003;0006;" & objExcel.Cells(8,15).Value
+            iMatriz(8,16)="940000000000;1621;0001;0002;0004;0004;" & objExcel.Cells(8,16).Value
+            iMatriz(8,17)="940000000000;1621;0001;0002;0004;0005;" & objExcel.Cells(8,17).Value
+            iMatriz(8,18)="940000000000;1621;0001;0002;0004;0006;" & objExcel.Cells(8,18).Value
+            iMatriz(8,19)="940000000000;1621;0001;0002;0005;0004;" & objExcel.Cells(8,19).Value
+            iMatriz(8,20)="940000000000;1621;0001;0002;0005;0005;" & objExcel.Cells(8,20).Value
+            iMatriz(8,21)="940000000000;1621;0001;0002;0005;0006;" & objExcel.Cells(8,21).Value 'OJO: 22 No existe
+            iMatriz(8,23)="940000000000;1621;0002;0001;0001;0001;" & objExcel.Cells(8,23).Value
+            iMatriz(8,24)="940000000000;1621;0002;0001;0001;0002;" & objExcel.Cells(8,24).Value
+            iMatriz(8,25)="940000000000;1621;0002;0001;0001;0003;" & objExcel.Cells(8,25).Value
+            iMatriz(8,26)="940000000000;1621;0002;0001;0002;0001;" & objExcel.Cells(8,26).Value
+            iMatriz(8,27)="940000000000;1621;0002;0001;0002;0002;" & objExcel.Cells(8,27).Value
+            iMatriz(8,28)="940000000000;1621;0002;0001;0002;0003;" & objExcel.Cells(8,28).Value
+            iMatriz(8,29)="940000000000;1621;0002;0002;0003;0004;" & objExcel.Cells(8,29).Value
+            iMatriz(8,30)="940000000000;1621;0002;0002;0003;0005;" & objExcel.Cells(8,30).Value
+            iMatriz(8,31)="940000000000;1621;0002;0002;0003;0006;" & objExcel.Cells(8,31).Value
+            iMatriz(8,32)="940000000000;1621;0002;0002;0004;0004;" & objExcel.Cells(8,32).Value
+            iMatriz(8,33)="940000000000;1621;0002;0002;0004;0005;" & objExcel.Cells(8,33).Value
+            iMatriz(8,34)="940000000000;1621;0002;0002;0004;0006;" & objExcel.Cells(8,34).Value
+            iMatriz(8,35)="940000000000;1621;0002;0002;0005;0004;" & objExcel.Cells(8,35).Value
+            iMatriz(8,36)="940000000000;1621;0002;0002;0005;0005;" & objExcel.Cells(8,36).Value
+            iMatriz(8,37)="940000000000;1621;0002;0002;0005;0006;" & objExcel.Cells(8,37).Value
+
+            iMatriz(9,7)="940100000000;1621;0001;0001;0001;0001;" & objExcel.Cells(9,7).Value
+            iMatriz(9,8)="940100000000;1621;0001;0001;0001;0002;" & objExcel.Cells(9,8).Value
+            iMatriz(9,9)="940100000000;1621;0001;0001;0001;0003;" & objExcel.Cells(9,9).Value
+            iMatriz(9,10)="940100000000;1621;0001;0001;0002;0001;" & objExcel.Cells(9,10).Value
+            iMatriz(9,11)="940100000000;1621;0001;0001;0002;0002;" & objExcel.Cells(9,11).Value
+            iMatriz(9,12)="940100000000;1621;0001;0001;0002;0003;" & objExcel.Cells(9,12).Value
+            iMatriz(9,13)="940100000000;1621;0001;0002;0003;0004;" & objExcel.Cells(9,13).Value
+            iMatriz(9,14)="940100000000;1621;0001;0002;0003;0005;" & objExcel.Cells(9,14).Value
+            iMatriz(9,15)="940100000000;1621;0001;0002;0003;0006;" & objExcel.Cells(9,15).Value
+            iMatriz(9,16)="940100000000;1621;0001;0002;0004;0004;" & objExcel.Cells(9,16).Value
+            iMatriz(9,17)="940100000000;1621;0001;0002;0004;0005;" & objExcel.Cells(9,17).Value
+            iMatriz(9,18)="940100000000;1621;0001;0002;0004;0006;" & objExcel.Cells(9,18).Value
+            iMatriz(9,19)="940100000000;1621;0001;0002;0005;0004;" & objExcel.Cells(9,19).Value
+            iMatriz(9,20)="940100000000;1621;0001;0002;0005;0005;" & objExcel.Cells(9,20).Value
+            iMatriz(9,21)="940100000000;1621;0001;0002;0005;0006;" & objExcel.Cells(9,21).Value
+            iMatriz(9,23)="940100000000;1621;0002;0001;0001;0001;" & objExcel.Cells(9,23).Value
+            iMatriz(9,24)="940100000000;1621;0002;0001;0001;0002;" & objExcel.Cells(9,24).Value
+            iMatriz(9,25)="940100000000;1621;0002;0001;0001;0003;" & objExcel.Cells(9,25).Value
+            iMatriz(9,26)="940100000000;1621;0002;0001;0002;0001;" & objExcel.Cells(9,26).Value
+            iMatriz(9,27)="940100000000;1621;0002;0001;0002;0002;" & objExcel.Cells(9,27).Value
+            iMatriz(9,28)="940100000000;1621;0002;0001;0002;0003;" & objExcel.Cells(9,28).Value
+            iMatriz(9,29)="940100000000;1621;0002;0002;0003;0004;" & objExcel.Cells(9,29).Value
+            iMatriz(9,30)="940100000000;1621;0002;0002;0003;0005;" & objExcel.Cells(9,30).Value
+            iMatriz(9,31)="940100000000;1621;0002;0002;0003;0006;" & objExcel.Cells(9,31).Value
+            iMatriz(9,32)="940100000000;1621;0002;0002;0004;0004;" & objExcel.Cells(9,32).Value
+            iMatriz(9,33)="940100000000;1621;0002;0002;0004;0005;" & objExcel.Cells(9,33).Value
+            iMatriz(9,34)="940100000000;1621;0002;0002;0004;0006;" & objExcel.Cells(9,34).Value
+            iMatriz(9,35)="940100000000;1621;0002;0002;0005;0004;" & objExcel.Cells(9,35).Value
+            iMatriz(9,36)="940100000000;1621;0002;0002;0005;0005;" & objExcel.Cells(9,36).Value
+            iMatriz(9,37)="940100000000;1621;0002;0002;0005;0006;" & objExcel.Cells(9,37).Value
+
+            iMatriz(25,7)="940200000000;1621;0001;0001;0001;0001;" & objExcel.Cells(25,7).Value
+            iMatriz(25,8)="940200000000;1621;0001;0001;0001;0002;" & objExcel.Cells(25,8).Value
+            iMatriz(25,9)="940200000000;1621;0001;0001;0001;0003;" & objExcel.Cells(25,9).Value
+            iMatriz(25,10)="940200000000;1621;0001;0001;0002;0001;" & objExcel.Cells(25,10).Value
+            iMatriz(25,11)="940200000000;1621;0001;0001;0002;0002;" & objExcel.Cells(25,11).Value
+            iMatriz(25,12)="940200000000;1621;0001;0001;0002;0003;" & objExcel.Cells(25,12).Value
+            iMatriz(25,13)="940200000000;1621;0001;0002;0003;0004;" & objExcel.Cells(25,13).Value
+            iMatriz(25,14)="940200000000;1621;0001;0002;0003;0005;" & objExcel.Cells(25,14).Value
+            iMatriz(25,15)="940200000000;1621;0001;0002;0003;0006;" & objExcel.Cells(25,15).Value
+            iMatriz(25,16)="940200000000;1621;0001;0002;0004;0004;" & objExcel.Cells(25,16).Value
+            iMatriz(25,17)="940200000000;1621;0001;0002;0004;0005;" & objExcel.Cells(25,17).Value
+            iMatriz(25,18)="940200000000;1621;0001;0002;0004;0006;" & objExcel.Cells(25,18).Value
+            iMatriz(25,19)="940200000000;1621;0001;0002;0005;0004;" & objExcel.Cells(25,19).Value
+            iMatriz(25,20)="940200000000;1621;0001;0002;0005;0005;" & objExcel.Cells(25,20).Value
+            iMatriz(25,21)="940200000000;1621;0001;0002;0005;0006;" & objExcel.Cells(25,21).Value
+            iMatriz(25,23)="940200000000;1621;0002;0001;0001;0001;" & objExcel.Cells(25,23).Value
+            iMatriz(25,24)="940200000000;1621;0002;0001;0001;0002;" & objExcel.Cells(25,24).Value
+            iMatriz(25,25)="940200000000;1621;0002;0001;0001;0003;" & objExcel.Cells(25,25).Value
+            iMatriz(25,26)="940200000000;1621;0002;0001;0002;0001;" & objExcel.Cells(25,26).Value
+            iMatriz(25,27)="940200000000;1621;0002;0001;0002;0002;" & objExcel.Cells(25,27).Value
+            iMatriz(25,28)="940200000000;1621;0002;0001;0002;0003;" & objExcel.Cells(25,28).Value
+            iMatriz(25,29)="940200000000;1621;0002;0002;0003;0004;" & objExcel.Cells(25,29).Value
+            iMatriz(25,30)="940200000000;1621;0002;0002;0003;0005;" & objExcel.Cells(25,30).Value
+            iMatriz(25,31)="940200000000;1621;0002;0002;0003;0006;" & objExcel.Cells(25,31).Value
+            iMatriz(25,32)="940200000000;1621;0002;0002;0004;0004;" & objExcel.Cells(25,32).Value
+            iMatriz(25,33)="940200000000;1621;0002;0002;0004;0005;" & objExcel.Cells(25,33).Value
+            iMatriz(25,34)="940200000000;1621;0002;0002;0004;0006;" & objExcel.Cells(25,34).Value
+            iMatriz(25,35)="940200000000;1621;0002;0002;0005;0004;" & objExcel.Cells(25,35).Value
+            iMatriz(25,36)="940200000000;1621;0002;0002;0005;0005;" & objExcel.Cells(25,36).Value
+            iMatriz(25,37)="940200000000;1621;0002;0002;0005;0006;" & objExcel.Cells(25,37).Value
+
+            iMatriz(34,7)="940300000000;1621;0001;0001;0001;0001;" & objExcel.Cells(34,7).Value
+            iMatriz(34,8)="940300000000;1621;0001;0001;0001;0002;" & objExcel.Cells(34,8).Value
+            iMatriz(34,9)="940300000000;1621;0001;0001;0001;0003;" & objExcel.Cells(34,9).Value
+            iMatriz(34,10)="940300000000;1621;0001;0001;0002;0001;" & objExcel.Cells(34,10).Value
+            iMatriz(34,11)="940300000000;1621;0001;0001;0002;0002;" & objExcel.Cells(34,11).Value
+            iMatriz(34,12)="940300000000;1621;0001;0001;0002;0003;" & objExcel.Cells(34,12).Value
+            iMatriz(34,13)="940300000000;1621;0001;0002;0003;0004;" & objExcel.Cells(34,13).Value
+            iMatriz(34,14)="940300000000;1621;0001;0002;0003;0005;" & objExcel.Cells(34,14).Value
+            iMatriz(34,15)="940300000000;1621;0001;0002;0003;0006;" & objExcel.Cells(34,15).Value
+            iMatriz(34,16)="940300000000;1621;0001;0002;0004;0004;" & objExcel.Cells(34,16).Value
+            iMatriz(34,17)="940300000000;1621;0001;0002;0004;0005;" & objExcel.Cells(34,17).Value
+            iMatriz(34,18)="940300000000;1621;0001;0002;0004;0006;" & objExcel.Cells(34,18).Value
+            iMatriz(34,19)="940300000000;1621;0001;0002;0005;0004;" & objExcel.Cells(34,19).Value
+            iMatriz(34,20)="940300000000;1621;0001;0002;0005;0005;" & objExcel.Cells(34,20).Value
+            iMatriz(34,21)="940300000000;1621;0001;0002;0005;0006;" & objExcel.Cells(34,21).Value
+            iMatriz(34,23)="940300000000;1621;0002;0001;0001;0001;" & objExcel.Cells(34,23).Value
+            iMatriz(34,24)="940300000000;1621;0002;0001;0001;0002;" & objExcel.Cells(34,24).Value
+            iMatriz(34,25)="940300000000;1621;0002;0001;0001;0003;" & objExcel.Cells(34,25).Value
+            iMatriz(34,26)="940300000000;1621;0002;0001;0002;0001;" & objExcel.Cells(34,26).Value
+            iMatriz(34,27)="940300000000;1621;0002;0001;0002;0002;" & objExcel.Cells(34,27).Value
+            iMatriz(34,28)="940300000000;1621;0002;0001;0002;0003;" & objExcel.Cells(34,28).Value
+            iMatriz(34,29)="940300000000;1621;0002;0002;0003;0004;" & objExcel.Cells(34,29).Value
+            iMatriz(34,30)="940300000000;1621;0002;0002;0003;0005;" & objExcel.Cells(34,30).Value
+            iMatriz(34,31)="940300000000;1621;0002;0002;0003;0006;" & objExcel.Cells(34,31).Value
+            iMatriz(34,32)="940300000000;1621;0002;0002;0004;0004;" & objExcel.Cells(34,32).Value
+            iMatriz(34,33)="940300000000;1621;0002;0002;0004;0005;" & objExcel.Cells(34,33).Value
+            iMatriz(34,34)="940300000000;1621;0002;0002;0004;0006;" & objExcel.Cells(34,34).Value
+            iMatriz(34,35)="940300000000;1621;0002;0002;0005;0004;" & objExcel.Cells(34,35).Value
+            iMatriz(34,36)="940300000000;1621;0002;0002;0005;0005;" & objExcel.Cells(34,36).Value
+            iMatriz(34,37)="940300000000;1621;0002;0002;0005;0006;" & objExcel.Cells(34,37).Value
+
+            iMatriz(47,7)="940400000000;1621;0001;0001;0001;0001;" & objExcel.Cells(47,7).Value
+            iMatriz(47,8)="940400000000;1621;0001;0001;0001;0002;" & objExcel.Cells(47,8).Value
+            iMatriz(47,9)="940400000000;1621;0001;0001;0001;0003;" & objExcel.Cells(47,9).Value
+            iMatriz(47,10)="940400000000;1621;0001;0001;0002;0001;" & objExcel.Cells(47,10).Value
+            iMatriz(47,11)="940400000000;1621;0001;0001;0002;0002;" & objExcel.Cells(47,11).Value
+            iMatriz(47,12)="940400000000;1621;0001;0001;0002;0003;" & objExcel.Cells(47,12).Value
+            iMatriz(47,13)="940400000000;1621;0001;0002;0003;0004;" & objExcel.Cells(47,13).Value
+            iMatriz(47,14)="940400000000;1621;0001;0002;0003;0005;" & objExcel.Cells(47,14).Value
+            iMatriz(47,15)="940400000000;1621;0001;0002;0003;0006;" & objExcel.Cells(47,15).Value
+            iMatriz(47,16)="940400000000;1621;0001;0002;0004;0004;" & objExcel.Cells(47,16).Value
+            iMatriz(47,17)="940400000000;1621;0001;0002;0004;0005;" & objExcel.Cells(47,17).Value
+            iMatriz(47,18)="940400000000;1621;0001;0002;0004;0006;" & objExcel.Cells(47,18).Value
+            iMatriz(47,19)="940400000000;1621;0001;0002;0005;0004;" & objExcel.Cells(47,19).Value
+            iMatriz(47,20)="940400000000;1621;0001;0002;0005;0005;" & objExcel.Cells(47,20).Value
+            iMatriz(47,21)="940400000000;1621;0001;0002;0005;0006;" & objExcel.Cells(47,21).Value
+            iMatriz(47,23)="940400000000;1621;0002;0001;0001;0001;" & objExcel.Cells(47,23).Value
+            iMatriz(47,24)="940400000000;1621;0002;0001;0001;0002;" & objExcel.Cells(47,24).Value
+            iMatriz(47,25)="940400000000;1621;0002;0001;0001;0003;" & objExcel.Cells(47,25).Value
+            iMatriz(47,26)="940400000000;1621;0002;0001;0002;0001;" & objExcel.Cells(47,26).Value
+            iMatriz(47,27)="940400000000;1621;0002;0001;0002;0002;" & objExcel.Cells(47,27).Value
+            iMatriz(47,28)="940400000000;1621;0002;0001;0002;0003;" & objExcel.Cells(47,28).Value
+            iMatriz(47,29)="940400000000;1621;0002;0002;0003;0004;" & objExcel.Cells(47,29).Value
+            iMatriz(47,30)="940400000000;1621;0002;0002;0003;0005;" & objExcel.Cells(47,30).Value
+            iMatriz(47,31)="940400000000;1621;0002;0002;0003;0006;" & objExcel.Cells(47,31).Value
+            iMatriz(47,32)="940400000000;1621;0002;0002;0004;0004;" & objExcel.Cells(47,32).Value
+            iMatriz(47,33)="940400000000;1621;0002;0002;0004;0005;" & objExcel.Cells(47,33).Value
+            iMatriz(47,34)="940400000000;1621;0002;0002;0004;0006;" & objExcel.Cells(47,34).Value
+            iMatriz(47,35)="940400000000;1621;0002;0002;0005;0004;" & objExcel.Cells(47,35).Value
+            iMatriz(47,36)="940400000000;1621;0002;0002;0005;0005;" & objExcel.Cells(47,36).Value
+            iMatriz(47,37)="940400000000;1621;0002;0002;0005;0006;" & objExcel.Cells(47,37).Value
+
+            iMatriz(57,7)="940500000000;1621;0001;0001;0001;0001;" & objExcel.Cells(57,7).Value
+            iMatriz(57,8)="940500000000;1621;0001;0001;0001;0002;" & objExcel.Cells(57,8).Value
+            iMatriz(57,9)="940500000000;1621;0001;0001;0001;0003;" & objExcel.Cells(57,9).Value
+            iMatriz(57,10)="940500000000;1621;0001;0001;0002;0001;" & objExcel.Cells(57,10).Value
+            iMatriz(57,11)="940500000000;1621;0001;0001;0002;0002;" & objExcel.Cells(57,11).Value
+            iMatriz(57,12)="940500000000;1621;0001;0001;0002;0003;" & objExcel.Cells(57,12).Value
+            iMatriz(57,13)="940500000000;1621;0001;0002;0003;0004;" & objExcel.Cells(57,13).Value
+            iMatriz(57,14)="940500000000;1621;0001;0002;0003;0005;" & objExcel.Cells(57,14).Value
+            iMatriz(57,15)="940500000000;1621;0001;0002;0003;0006;" & objExcel.Cells(57,15).Value
+            iMatriz(57,16)="940500000000;1621;0001;0002;0004;0004;" & objExcel.Cells(57,16).Value
+            iMatriz(57,17)="940500000000;1621;0001;0002;0004;0005;" & objExcel.Cells(57,17).Value
+            iMatriz(57,18)="940500000000;1621;0001;0002;0004;0006;" & objExcel.Cells(57,18).Value
+            iMatriz(57,19)="940500000000;1621;0001;0002;0005;0004;" & objExcel.Cells(57,19).Value
+            iMatriz(57,20)="940500000000;1621;0001;0002;0005;0005;" & objExcel.Cells(57,20).Value
+            iMatriz(57,21)="940500000000;1621;0001;0002;0005;0006;" & objExcel.Cells(57,21).Value
+            iMatriz(57,23)="940500000000;1621;0002;0001;0001;0001;" & objExcel.Cells(57,23).Value
+            iMatriz(57,24)="940500000000;1621;0002;0001;0001;0002;" & objExcel.Cells(57,24).Value
+            iMatriz(57,25)="940500000000;1621;0002;0001;0001;0003;" & objExcel.Cells(57,25).Value
+            iMatriz(57,26)="940500000000;1621;0002;0001;0002;0001;" & objExcel.Cells(57,26).Value
+            iMatriz(57,27)="940500000000;1621;0002;0001;0002;0002;" & objExcel.Cells(57,27).Value
+            iMatriz(57,28)="940500000000;1621;0002;0001;0002;0003;" & objExcel.Cells(57,28).Value
+            iMatriz(57,29)="940500000000;1621;0002;0002;0003;0004;" & objExcel.Cells(57,29).Value
+            iMatriz(57,30)="940500000000;1621;0002;0002;0003;0005;" & objExcel.Cells(57,30).Value
+            iMatriz(57,31)="940500000000;1621;0002;0002;0003;0006;" & objExcel.Cells(57,31).Value
+            iMatriz(57,32)="940500000000;1621;0002;0002;0004;0004;" & objExcel.Cells(57,32).Value
+            iMatriz(57,33)="940500000000;1621;0002;0002;0004;0005;" & objExcel.Cells(57,33).Value
+            iMatriz(57,34)="940500000000;1621;0002;0002;0004;0006;" & objExcel.Cells(57,34).Value
+            iMatriz(57,35)="940500000000;1621;0002;0002;0005;0004;" & objExcel.Cells(57,35).Value
+            iMatriz(57,36)="940500000000;1621;0002;0002;0005;0005;" & objExcel.Cells(57,36).Value
+            iMatriz(57,37)="940500000000;1621;0002;0002;0005;0006;" & objExcel.Cells(57,37).Value
+
+            iMatriz(11,7)="940102000000;1621;0001;0001;0001;0001;" & objExcel.Cells(11,7).Value
+            iMatriz(11,8)="940102000000;1621;0001;0001;0001;0002;" & objExcel.Cells(11,8).Value
+            iMatriz(11,9)="940102000000;1621;0001;0001;0001;0003;" & objExcel.Cells(11,9).Value
+            iMatriz(11,10)="940102000000;1621;0001;0001;0002;0001;" & objExcel.Cells(11,10).Value
+            iMatriz(11,11)="940102000000;1621;0001;0001;0002;0002;" & objExcel.Cells(11,11).Value
+            iMatriz(11,12)="940102000000;1621;0001;0001;0002;0003;" & objExcel.Cells(11,12).Value
+            iMatriz(11,13)="940102000000;1621;0001;0002;0003;0004;" & objExcel.Cells(11,13).Value
+            iMatriz(11,14)="940102000000;1621;0001;0002;0003;0005;" & objExcel.Cells(11,14).Value
+            iMatriz(11,15)="940102000000;1621;0001;0002;0003;0006;" & objExcel.Cells(11,15).Value
+            iMatriz(11,16)="940102000000;1621;0001;0002;0004;0004;" & objExcel.Cells(11,16).Value
+            iMatriz(11,17)="940102000000;1621;0001;0002;0004;0005;" & objExcel.Cells(11,17).Value
+            iMatriz(11,18)="940102000000;1621;0001;0002;0004;0006;" & objExcel.Cells(11,18).Value
+            iMatriz(11,19)="940102000000;1621;0001;0002;0005;0004;" & objExcel.Cells(11,19).Value
+            iMatriz(11,20)="940102000000;1621;0001;0002;0005;0005;" & objExcel.Cells(11,20).Value
+            iMatriz(11,21)="940102000000;1621;0001;0002;0005;0006;" & objExcel.Cells(11,21).Value
+            iMatriz(11,23)="940102000000;1621;0002;0001;0001;0001;" & objExcel.Cells(11,23).Value
+            iMatriz(11,24)="940102000000;1621;0002;0001;0001;0002;" & objExcel.Cells(11,24).Value
+            iMatriz(11,25)="940102000000;1621;0002;0001;0001;0003;" & objExcel.Cells(11,25).Value
+            iMatriz(11,26)="940102000000;1621;0002;0001;0002;0001;" & objExcel.Cells(11,26).Value
+            iMatriz(11,27)="940102000000;1621;0002;0001;0002;0002;" & objExcel.Cells(11,27).Value
+            iMatriz(11,28)="940102000000;1621;0002;0001;0002;0003;" & objExcel.Cells(11,28).Value
+            iMatriz(11,29)="940102000000;1621;0002;0002;0003;0004;" & objExcel.Cells(11,29).Value
+            iMatriz(11,30)="940102000000;1621;0002;0002;0003;0005;" & objExcel.Cells(11,30).Value
+            iMatriz(11,31)="940102000000;1621;0002;0002;0003;0006;" & objExcel.Cells(11,31).Value
+            iMatriz(11,32)="940102000000;1621;0002;0002;0004;0004;" & objExcel.Cells(11,32).Value
+            iMatriz(11,33)="940102000000;1621;0002;0002;0004;0005;" & objExcel.Cells(11,33).Value
+            iMatriz(11,34)="940102000000;1621;0002;0002;0004;0006;" & objExcel.Cells(11,34).Value
+            iMatriz(11,35)="940102000000;1621;0002;0002;0005;0004;" & objExcel.Cells(11,35).Value
+            iMatriz(11,36)="940102000000;1621;0002;0002;0005;0005;" & objExcel.Cells(11,36).Value
+            iMatriz(11,37)="940102000000;1621;0002;0002;0005;0006;" & objExcel.Cells(11,37).Value
+
+            iMatriz(42,7)="940308000000;1621;0001;0001;0001;0001;" & objExcel.Cells(42,7).Value
+            iMatriz(42,8)="940308000000;1621;0001;0001;0001;0002;" & objExcel.Cells(42,8).Value
+            iMatriz(42,9)="940308000000;1621;0001;0001;0001;0003;" & objExcel.Cells(42,9).Value
+            iMatriz(42,10)="940308000000;1621;0001;0001;0002;0001;" & objExcel.Cells(42,10).Value
+            iMatriz(42,11)="940308000000;1621;0001;0001;0002;0002;" & objExcel.Cells(42,11).Value
+            iMatriz(42,12)="940308000000;1621;0001;0001;0002;0003;" & objExcel.Cells(42,12).Value
+            iMatriz(42,13)="940308000000;1621;0001;0002;0003;0004;" & objExcel.Cells(42,13).Value
+            iMatriz(42,14)="940308000000;1621;0001;0002;0003;0005;" & objExcel.Cells(42,14).Value
+            iMatriz(42,15)="940308000000;1621;0001;0002;0003;0006;" & objExcel.Cells(42,15).Value
+            iMatriz(42,16)="940308000000;1621;0001;0002;0004;0004;" & objExcel.Cells(42,16).Value
+            iMatriz(42,17)="940308000000;1621;0001;0002;0004;0005;" & objExcel.Cells(42,17).Value
+            iMatriz(42,18)="940308000000;1621;0001;0002;0004;0006;" & objExcel.Cells(42,18).Value
+            iMatriz(42,19)="940308000000;1621;0001;0002;0005;0004;" & objExcel.Cells(42,19).Value
+            iMatriz(42,20)="940308000000;1621;0001;0002;0005;0005;" & objExcel.Cells(42,20).Value
+            iMatriz(42,21)="940308000000;1621;0001;0002;0005;0006;" & objExcel.Cells(42,21).Value
+            iMatriz(42,23)="940308000000;1621;0002;0001;0001;0001;" & objExcel.Cells(42,23).Value
+            iMatriz(42,24)="940308000000;1621;0002;0001;0001;0002;" & objExcel.Cells(42,24).Value
+            iMatriz(42,25)="940308000000;1621;0002;0001;0001;0003;" & objExcel.Cells(42,25).Value
+            iMatriz(42,26)="940308000000;1621;0002;0001;0002;0001;" & objExcel.Cells(42,26).Value
+            iMatriz(42,27)="940308000000;1621;0002;0001;0002;0002;" & objExcel.Cells(42,27).Value
+            iMatriz(42,28)="940308000000;1621;0002;0001;0002;0003;" & objExcel.Cells(42,28).Value
+            iMatriz(42,29)="940308000000;1621;0002;0002;0003;0004;" & objExcel.Cells(42,29).Value
+            iMatriz(42,30)="940308000000;1621;0002;0002;0003;0005;" & objExcel.Cells(42,30).Value
+            iMatriz(42,31)="940308000000;1621;0002;0002;0003;0006;" & objExcel.Cells(42,31).Value
+            iMatriz(42,32)="940308000000;1621;0002;0002;0004;0004;" & objExcel.Cells(42,32).Value
+            iMatriz(42,33)="940308000000;1621;0002;0002;0004;0005;" & objExcel.Cells(42,33).Value
+            iMatriz(42,34)="940308000000;1621;0002;0002;0004;0006;" & objExcel.Cells(42,34).Value
+            iMatriz(42,35)="940308000000;1621;0002;0002;0005;0004;" & objExcel.Cells(42,35).Value
+            iMatriz(42,36)="940308000000;1621;0002;0002;0005;0005;" & objExcel.Cells(42,36).Value
+            iMatriz(42,37)="940308000000;1621;0002;0002;0005;0006;" & objExcel.Cells(42,37).Value
+
+            iMatriz(55,7)="940409000000;1621;0001;0001;0001;0001;" & objExcel.Cells(55,7).Value
+            iMatriz(55,8)="940409000000;1621;0001;0001;0001;0002;" & objExcel.Cells(55,8).Value
+            iMatriz(55,9)="940409000000;1621;0001;0001;0001;0003;" & objExcel.Cells(55,9).Value
+            iMatriz(55,10)="940409000000;1621;0001;0001;0002;0001;" & objExcel.Cells(55,10).Value
+            iMatriz(55,11)="940409000000;1621;0001;0001;0002;0002;" & objExcel.Cells(55,11).Value
+            iMatriz(55,12)="940409000000;1621;0001;0001;0002;0003;" & objExcel.Cells(55,12).Value
+            iMatriz(55,13)="940409000000;1621;0001;0002;0003;0004;" & objExcel.Cells(55,13).Value
+            iMatriz(55,14)="940409000000;1621;0001;0002;0003;0005;" & objExcel.Cells(55,14).Value
+            iMatriz(55,15)="940409000000;1621;0001;0002;0003;0006;" & objExcel.Cells(55,15).Value
+            iMatriz(55,16)="940409000000;1621;0001;0002;0004;0004;" & objExcel.Cells(55,16).Value
+            iMatriz(55,17)="940409000000;1621;0001;0002;0004;0005;" & objExcel.Cells(55,17).Value
+            iMatriz(55,18)="940409000000;1621;0001;0002;0004;0006;" & objExcel.Cells(55,18).Value
+            iMatriz(55,19)="940409000000;1621;0001;0002;0005;0004;" & objExcel.Cells(55,19).Value
+            iMatriz(55,20)="940409000000;1621;0001;0002;0005;0005;" & objExcel.Cells(55,20).Value
+            iMatriz(55,21)="940409000000;1621;0001;0002;0005;0006;" & objExcel.Cells(55,21).Value
+            iMatriz(55,23)="940409000000;1621;0002;0001;0001;0001;" & objExcel.Cells(55,23).Value
+            iMatriz(55,24)="940409000000;1621;0002;0001;0001;0002;" & objExcel.Cells(55,24).Value
+            iMatriz(55,25)="940409000000;1621;0002;0001;0001;0003;" & objExcel.Cells(55,25).Value
+            iMatriz(55,26)="940409000000;1621;0002;0001;0002;0001;" & objExcel.Cells(55,26).Value
+            iMatriz(55,27)="940409000000;1621;0002;0001;0002;0002;" & objExcel.Cells(55,27).Value
+            iMatriz(55,28)="940409000000;1621;0002;0001;0002;0003;" & objExcel.Cells(55,28).Value
+            iMatriz(55,29)="940409000000;1621;0002;0002;0003;0004;" & objExcel.Cells(55,29).Value
+            iMatriz(55,30)="940409000000;1621;0002;0002;0003;0005;" & objExcel.Cells(55,30).Value
+            iMatriz(55,31)="940409000000;1621;0002;0002;0003;0006;" & objExcel.Cells(55,31).Value
+            iMatriz(55,32)="940409000000;1621;0002;0002;0004;0004;" & objExcel.Cells(55,32).Value
+            iMatriz(55,33)="940409000000;1621;0002;0002;0004;0005;" & objExcel.Cells(55,33).Value
+            iMatriz(55,34)="940409000000;1621;0002;0002;0004;0006;" & objExcel.Cells(55,34).Value
+            iMatriz(55,35)="940409000000;1621;0002;0002;0005;0004;" & objExcel.Cells(55,35).Value
+            iMatriz(55,36)="940409000000;1621;0002;0002;0005;0005;" & objExcel.Cells(55,36).Value
+            iMatriz(55,37)="940409000000;1621;0002;0002;0005;0006;" & objExcel.Cells(55,37).Value
+
+            iMatriz(56,7)="940408000000;1621;0001;0001;0001;0001;" & objExcel.Cells(56,7).Value
+            iMatriz(56,8)="940408000000;1621;0001;0001;0001;0002;" & objExcel.Cells(56,8).Value
+            iMatriz(56,9)="940408000000;1621;0001;0001;0001;0003;" & objExcel.Cells(56,9).Value
+            iMatriz(56,10)="940408000000;1621;0001;0001;0002;0001;" & objExcel.Cells(56,10).Value
+            iMatriz(56,11)="940408000000;1621;0001;0001;0002;0002;" & objExcel.Cells(56,11).Value
+            iMatriz(56,12)="940408000000;1621;0001;0001;0002;0003;" & objExcel.Cells(56,12).Value
+            iMatriz(56,13)="940408000000;1621;0001;0002;0003;0004;" & objExcel.Cells(56,13).Value
+            iMatriz(56,14)="940408000000;1621;0001;0002;0003;0005;" & objExcel.Cells(56,14).Value
+            iMatriz(56,15)="940408000000;1621;0001;0002;0003;0006;" & objExcel.Cells(56,15).Value
+            iMatriz(56,16)="940408000000;1621;0001;0002;0004;0004;" & objExcel.Cells(56,16).Value
+            iMatriz(56,17)="940408000000;1621;0001;0002;0004;0005;" & objExcel.Cells(56,17).Value
+            iMatriz(56,18)="940408000000;1621;0001;0002;0004;0006;" & objExcel.Cells(56,18).Value
+            iMatriz(56,19)="940408000000;1621;0001;0002;0005;0004;" & objExcel.Cells(56,19).Value
+            iMatriz(56,20)="940408000000;1621;0001;0002;0005;0005;" & objExcel.Cells(56,20).Value
+            iMatriz(56,21)="940408000000;1621;0001;0002;0005;0006;" & objExcel.Cells(56,21).Value
+            iMatriz(56,23)="940408000000;1621;0002;0001;0001;0001;" & objExcel.Cells(56,23).Value
+            iMatriz(56,24)="940408000000;1621;0002;0001;0001;0002;" & objExcel.Cells(56,24).Value
+            iMatriz(56,25)="940408000000;1621;0002;0001;0001;0003;" & objExcel.Cells(56,25).Value
+            iMatriz(56,26)="940408000000;1621;0002;0001;0002;0001;" & objExcel.Cells(56,26).Value
+            iMatriz(56,27)="940408000000;1621;0002;0001;0002;0002;" & objExcel.Cells(56,27).Value
+            iMatriz(56,28)="940408000000;1621;0002;0001;0002;0003;" & objExcel.Cells(56,28).Value
+            iMatriz(56,29)="940408000000;1621;0002;0002;0003;0004;" & objExcel.Cells(56,29).Value
+            iMatriz(56,30)="940408000000;1621;0002;0002;0003;0005;" & objExcel.Cells(56,30).Value
+            iMatriz(56,31)="940408000000;1621;0002;0002;0003;0006;" & objExcel.Cells(56,31).Value
+            iMatriz(56,32)="940408000000;1621;0002;0002;0004;0004;" & objExcel.Cells(56,32).Value
+            iMatriz(56,33)="940408000000;1621;0002;0002;0004;0005;" & objExcel.Cells(56,33).Value
+            iMatriz(56,34)="940408000000;1621;0002;0002;0004;0006;" & objExcel.Cells(56,34).Value
+            iMatriz(56,35)="940408000000;1621;0002;0002;0005;0004;" & objExcel.Cells(56,35).Value
+            iMatriz(56,36)="940408000000;1621;0002;0002;0005;0005;" & objExcel.Cells(56,36).Value
+            iMatriz(56,37)="940408000000;1621;0002;0002;0005;0006;" & objExcel.Cells(56,37).Value
+
+     'Append archivo plano
+      Set objTxt = objFSO.opentextfile(filePath,8) 'Appending=8
+        
+        iArray(0)=8
+        iArray(1)=9
+        iArray(2)=25
+        iArray(3)=34
+        iArray(4)=47
+        iArray(5)=57
+        iArray(6)=11
+        iArray(7)=42
+        iArray(8)=55
+        iArray(9)=56
+        
+        For iRow = 0 to 9
+         For iCol = 7 To 37
+             If (iCol <> 22) Then
+                objTxt.WriteLine(iMatriz(iArray(iRow),iCol))
+             End If
+         Next
+        Next
+        
+objTxt.Close
+objExcel.Quit
